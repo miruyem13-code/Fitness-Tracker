@@ -9,6 +9,8 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Nunito',sans-serif;overflow-x:hidden;background:#fff;color:#111}
+
+/* ─── VARIABLES ─── */
 :root{
   --purple:#7B2FFF;
   --purple-dark:#6020d0;
@@ -21,209 +23,640 @@ body{font-family:'Nunito',sans-serif;overflow-x:hidden;background:#fff;color:#11
   --yellow:#FFC107;
   --hand:'Permanent Marker',cursive;
 }
-nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;background:var(--purple);}
-.logo-box{background:var(--teal);color:#fff;font-family:var(--hand);font-size:14px;padding:6px 12px;border-radius:8px;cursor:pointer;border:2px solid #000;box-shadow:2px 2px 0 #000;}
+
+/* ─── NAV ─── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 48px;
+  background:var(--purple);
+}
+.logo-box{
+  background:var(--teal);
+  color:#fff;font-family:var(--hand);font-size:14px;
+  padding:6px 12px;border-radius:8px;cursor:pointer;
+  border:2px solid #000;box-shadow:2px 2px 0 #000;
+}
 .nav-icons{display:flex;align-items:center;gap:20px}
-.nav-icons a{color:#fff;text-decoration:none;font-size:14px;font-weight:700;transition:opacity .2s;}
+.nav-icons a{
+  color:#fff;text-decoration:none;font-size:14px;font-weight:700;
+  transition:opacity .2s;
+}
 .nav-icons a:hover{opacity:.7}
-.nav-burger{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer;}
+.nav-burger{
+  width:38px;height:38px;border-radius:50%;
+  background:rgba(255,255,255,0.15);
+  border:2px solid rgba(255,255,255,0.3);
+  display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:4px;cursor:pointer;
+}
 .nav-burger span{width:16px;height:2px;background:#fff;border-radius:2px}
-#hero{min-height:100vh;background:var(--purple);display:flex;align-items:center;padding:100px 48px 60px;position:relative;overflow:hidden;}
+
+/* ─── SECTION 1: HERO ─── */
+#hero{
+  min-height:100vh;
+  background:var(--purple);
+  display:flex;align-items:center;
+  padding:100px 48px 60px;
+  position:relative;overflow:hidden;
+}
 .hero-left{flex:1;z-index:2}
-.hero-left h1{font-family:var(--hand);font-size:clamp(36px,5vw,58px);color:#fff;line-height:1.2;margin-bottom:20px;text-shadow:3px 3px 0 rgba(0,0,0,0.15);}
-.hero-left p{color:rgba(255,255,255,0.85);font-size:15px;line-height:1.7;max-width:380px;margin-bottom:32px;}
+.hero-left h1{
+  font-family:var(--hand);
+  font-size:clamp(36px,5vw,58px);
+  color:#fff;line-height:1.2;
+  margin-bottom:20px;
+  text-shadow:3px 3px 0 rgba(0,0,0,0.15);
+}
+.hero-left p{
+  color:rgba(255,255,255,0.85);
+  font-size:15px;line-height:1.7;
+  max-width:380px;margin-bottom:32px;
+}
 .btn-group{display:flex;gap:16px;flex-wrap:wrap}
-.btn-dl{display:flex;align-items:center;gap:8px;padding:12px 24px;background:#fff;color:#111;font-family:'Nunito',sans-serif;font-size:14px;font-weight:700;border:2px solid #111;border-radius:10px;box-shadow:3px 3px 0 #111;cursor:pointer;text-decoration:none;transition:transform .15s,box-shadow .15s;}
+.btn-dl{
+  display:flex;align-items:center;gap:8px;
+  padding:12px 24px;
+  background:#fff;color:#111;
+  font-family:'Nunito',sans-serif;font-size:14px;font-weight:700;
+  border:2px solid #111;border-radius:10px;
+  box-shadow:3px 3px 0 #111;
+  cursor:pointer;text-decoration:none;
+  transition:transform .15s,box-shadow .15s;
+}
 .btn-dl:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 #111}
 .btn-dl:active{transform:translate(1px,1px);box-shadow:1px 1px 0 #111}
 .btn-dl span{font-size:18px}
-.hero-right{flex:1;display:flex;justify-content:center;align-items:center;position:relative;z-index:2;}
-.phone{width:260px;background:#fff;border-radius:40px;border:4px solid #111;box-shadow:8px 8px 0 #111;padding:20px 16px 16px;position:relative;}
-.phone::before{content:'';position:absolute;top:16px;left:50%;transform:translateX(-50%);width:60px;height:6px;background:#eee;border-radius:4px;}
-.phone-chart{background:#f8f8f8;border-radius:12px;border:2px solid #111;padding:12px;margin-bottom:12px;margin-top:12px;}
-.chart-bars-phone{display:flex;align-items:flex-end;gap:5px;height:60px;}
-.cb{flex:1;border-radius:4px 4px 0 0;background:#ddd;transition:height .3s;}
+
+/* Phone mockup */
+.hero-right{
+  flex:1;display:flex;justify-content:center;align-items:center;
+  position:relative;z-index:2;
+}
+.phone{
+  width:260px;
+  background:#fff;
+  border-radius:40px;
+  border:4px solid #111;
+  box-shadow:8px 8px 0 #111;
+  padding:20px 16px 16px;
+  position:relative;
+}
+.phone::before{
+  content:'';position:absolute;top:16px;left:50%;transform:translateX(-50%);
+  width:60px;height:6px;background:#eee;border-radius:4px;
+}
+.phone-chart{
+  background:#f8f8f8;border-radius:12px;
+  border:2px solid #111;
+  padding:12px;margin-bottom:12px;margin-top:12px;
+}
+.chart-bars-phone{
+  display:flex;align-items:flex-end;gap:5px;height:60px;
+}
+.cb{
+  flex:1;border-radius:4px 4px 0 0;
+  background:#ddd;
+  transition:height .3s;
+}
 .cb.active{background:#111}
-.chart-days{display:flex;justify-content:space-between;margin-top:6px;font-size:9px;color:#888;}
+.chart-days{
+  display:flex;justify-content:space-between;
+  margin-top:6px;
+  font-size:9px;color:#888;
+}
 .phone-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
-.phone-stat{background:var(--teal);border-radius:12px;border:2px solid #111;box-shadow:3px 3px 0 #111;padding:12px 10px;text-align:center;}
+.phone-stat{
+  background:var(--teal);
+  border-radius:12px;border:2px solid #111;
+  box-shadow:3px 3px 0 #111;
+  padding:12px 10px;text-align:center;
+}
 .phone-stat:nth-child(2){background:#fff}
 .phone-stat .ps-num{font-size:22px;font-weight:800;line-height:1}
 .phone-stat .ps-lbl{font-size:10px;color:rgba(0,0,0,0.6);margin-top:2px}
-.phone-btn{width:100%;padding:10px;background:#fff;border:2px solid #111;border-radius:12px;box-shadow:3px 3px 0 #111;font-family:'Nunito',sans-serif;font-weight:700;font-size:14px;cursor:pointer;}
-.cloud{position:absolute;background:#fff;border-radius:50px;opacity:0.15;pointer-events:none;}
-.cloud::before,.cloud::after{content:'';position:absolute;background:#fff;border-radius:50%;}
-.c1{width:180px;height:60px;top:120px;right:80px}.c1::before{width:90px;height:90px;top:-45px;left:20px}.c1::after{width:70px;height:70px;top:-35px;right:20px}
-.c2{width:140px;height:50px;top:200px;left:30px;opacity:0.08}.c2::before{width:70px;height:70px;top:-35px;left:15px}.c2::after{width:55px;height:55px;top:-28px;right:15px}
-.c3{width:120px;height:40px;bottom:100px;right:30px;opacity:0.1}.c3::before{width:60px;height:60px;top:-30px;left:12px}.c3::after{width:48px;height:48px;top:-24px;right:12px}
-#about{padding:80px 48px;background:#fff;text-align:center;}
+.phone-btn{
+  width:100%;padding:10px;
+  background:#fff;border:2px solid #111;
+  border-radius:12px;box-shadow:3px 3px 0 #111;
+  font-family:'Nunito',sans-serif;font-weight:700;font-size:14px;
+  cursor:pointer;
+}
+
+/* Cloud decorations */
+.cloud{
+  position:absolute;background:#fff;border-radius:50px;
+  opacity:0.15;pointer-events:none;
+}
+.cloud::before,.cloud::after{
+  content:'';position:absolute;background:#fff;border-radius:50%;
+}
+.c1{width:180px;height:60px;top:120px;right:80px}
+.c1::before{width:90px;height:90px;top:-45px;left:20px}
+.c1::after{width:70px;height:70px;top:-35px;right:20px}
+.c2{width:140px;height:50px;top:200px;left:30px;opacity:0.08}
+.c2::before{width:70px;height:70px;top:-35px;left:15px}
+.c2::after{width:55px;height:55px;top:-28px;right:15px}
+.c3{width:120px;height:40px;bottom:100px;right:30px;opacity:0.1}
+.c3::before{width:60px;height:60px;top:-30px;left:12px}
+.c3::after{width:48px;height:48px;top:-24px;right:12px}
+
+/* ─── SECTION 2: ABOUT ─── */
+#about{
+  padding:80px 48px;
+  background:#fff;
+  text-align:center;
+}
 #about h2{font-family:var(--hand);font-size:40px;margin-bottom:12px;color:#111}
 #about .sub{font-size:15px;color:#555;max-width:500px;margin:0 auto 40px;line-height:1.7}
+
 .slider-wrap{position:relative;overflow:hidden;margin:0 -48px;padding:0 48px}
-.slider-track{display:flex;gap:20px;transition:transform .4s cubic-bezier(.4,0,.2,1);padding:4px 0 20px;}
-.feature-card{min-width:280px;border-radius:18px;border:2px solid #111;box-shadow:4px 4px 0 #111;padding:20px;display:flex;flex-direction:column;gap:12px;flex-shrink:0;cursor:pointer;transition:transform .2s;}
+.slider-track{
+  display:flex;gap:20px;
+  transition:transform .4s cubic-bezier(.4,0,.2,1);
+  padding:4px 0 20px;
+}
+.feature-card{
+  min-width:280px;
+  border-radius:18px;border:2px solid #111;
+  box-shadow:4px 4px 0 #111;
+  padding:20px;
+  display:flex;flex-direction:column;gap:12px;
+  flex-shrink:0;cursor:pointer;
+  transition:transform .2s;
+}
 .feature-card:hover{transform:translateY(-4px)}
-.fc-orange{background:#FF9800}.fc-coral{background:#FF5252}.fc-pink{background:#FFB3C1}.fc-yellow{background:#FFC107}.fc-teal{background:var(--teal)}.fc-purple{background:var(--purple);color:#fff}
-.fc-img{width:100%;aspect-ratio:4/3;background:rgba(255,255,255,0.35);border-radius:10px;border:2px solid rgba(0,0,0,0.15);display:flex;align-items:center;justify-content:center;font-size:32px;}
+.fc-orange{background:#FF9800}
+.fc-coral{background:#FF5252}
+.fc-pink{background:#FFB3C1}
+.fc-yellow{background:#FFC107}
+.fc-teal{background:var(--teal)}
+.fc-purple{background:var(--purple);color:#fff}
+
+.fc-img{
+  width:100%;aspect-ratio:4/3;
+  background:rgba(255,255,255,0.35);
+  border-radius:10px;border:2px solid rgba(0,0,0,0.15);
+  display:flex;align-items:center;justify-content:center;
+  font-size:32px;
+}
 .fc-title{font-weight:800;font-size:15px;line-height:1.3;color:#111}
 .fc-purple .fc-title{color:#fff}
 .fc-desc{font-size:13px;color:rgba(0,0,0,0.65);line-height:1.6}
 .fc-purple .fc-desc{color:rgba(255,255,255,0.75)}
+
 .slider-dots{display:flex;gap:10px;justify-content:center;margin-top:20px}
-.sdot{width:12px;height:12px;border-radius:50%;background:#ddd;border:2px solid #111;cursor:pointer;transition:background .2s,transform .2s;}
+.sdot{
+  width:12px;height:12px;border-radius:50%;
+  background:#ddd;border:2px solid #111;cursor:pointer;
+  transition:background .2s,transform .2s;
+}
 .sdot.active{background:var(--orange);transform:scale(1.2)}
-#watch{min-height:80vh;background:var(--purple);display:flex;align-items:center;padding:80px 48px;gap:60px;position:relative;overflow:hidden;}
+
+/* ─── SECTION 3: WATCH ─── */
+#watch{
+  min-height:80vh;
+  background:var(--purple);
+  display:flex;align-items:center;
+  padding:80px 48px;
+  gap:60px;
+  position:relative;overflow:hidden;
+}
 .watch-left{flex:1;z-index:2}
-.watch-left h2{font-family:var(--hand);font-size:clamp(28px,4vw,46px);color:#fff;line-height:1.3;margin-bottom:20px;}
-.watch-left p{color:rgba(255,255,255,0.85);font-size:15px;line-height:1.7;max-width:380px;margin-bottom:16px;}
+.watch-left h2{
+  font-family:var(--hand);font-size:clamp(28px,4vw,46px);
+  color:#fff;line-height:1.3;margin-bottom:20px;
+}
+.watch-left p{
+  color:rgba(255,255,255,0.85);font-size:15px;
+  line-height:1.7;max-width:380px;margin-bottom:16px;
+}
 .email-form{display:flex;gap:0;margin-top:28px;max-width:340px}
-.email-form input{flex:1;padding:14px 18px;border:2px solid #111;border-right:none;border-radius:10px 0 0 10px;font-family:'Nunito',sans-serif;font-size:14px;background:#fff;outline:none;}
-.email-form button{padding:14px 22px;background:var(--orange);color:#111;border:2px solid #111;border-radius:0 10px 10px 0;font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;cursor:pointer;white-space:nowrap;box-shadow:3px 3px 0 #000;transition:transform .15s,box-shadow .15s;}
+.email-form input{
+  flex:1;padding:14px 18px;
+  border:2px solid #111;border-right:none;
+  border-radius:10px 0 0 10px;
+  font-family:'Nunito',sans-serif;font-size:14px;
+  background:#fff;outline:none;
+}
+.email-form button{
+  padding:14px 22px;
+  background:var(--orange);color:#111;
+  border:2px solid #111;border-radius:0 10px 10px 0;
+  font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;
+  cursor:pointer;white-space:nowrap;
+  box-shadow:3px 3px 0 #000;
+  transition:transform .15s,box-shadow .15s;
+}
 .email-form button:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 #000}
+
+/* Watch mockup */
 .watch-right{flex:1;display:flex;justify-content:center;align-items:center;z-index:2}
-.watch-device{width:200px;height:220px;background:var(--purple-dark);border-radius:36px;border:4px solid rgba(255,255,255,0.3);box-shadow:0 0 0 6px rgba(255,255,255,0.08),8px 8px 0 rgba(0,0,0,0.3);padding:18px 16px 14px;position:relative;display:flex;flex-direction:column;align-items:center;}
-.watch-time{font-size:14px;font-weight:700;color:#fff;align-self:flex-start;margin-bottom:6px;}
-.watch-temp{font-size:12px;color:rgba(255,255,255,0.7);position:absolute;top:18px;right:16px;}
-.watch-rings{position:relative;width:110px;height:110px;margin:4px 0;}
+.watch-device{
+  width:200px;height:220px;
+  background:var(--purple-dark);
+  border-radius:36px;border:4px solid rgba(255,255,255,0.3);
+  box-shadow:0 0 0 6px rgba(255,255,255,0.08),8px 8px 0 rgba(0,0,0,0.3);
+  padding:18px 16px 14px;
+  position:relative;
+  display:flex;flex-direction:column;
+  align-items:center;
+}
+.watch-time{
+  font-size:14px;font-weight:700;color:#fff;
+  align-self:flex-start;margin-bottom:6px;
+}
+.watch-temp{
+  font-size:12px;color:rgba(255,255,255,0.7);
+  position:absolute;top:18px;right:16px;
+}
+.watch-rings{
+  position:relative;width:110px;height:110px;margin:4px 0;
+}
 .watch-rings svg{position:absolute;top:0;left:0}
-.watch-btns{display:flex;gap:6px;margin-top:8px;width:100%;}
-.watch-btn{flex:1;height:22px;background:rgba(255,255,255,0.15);border-radius:6px;border:1px solid rgba(255,255,255,0.2);}
-.watch-device::before{content:'';position:absolute;right:-10px;top:40px;width:8px;height:50px;background:rgba(255,255,255,0.15);border-radius:0 6px 6px 0;}
-#stories{padding:80px 48px;background:#fff;}
+.watch-btns{
+  display:flex;gap:6px;margin-top:8px;width:100%;
+}
+.watch-btn{
+  flex:1;height:22px;background:rgba(255,255,255,0.15);
+  border-radius:6px;border:1px solid rgba(255,255,255,0.2);
+}
+/* side button */
+.watch-device::before{
+  content:'';position:absolute;
+  right:-10px;top:40px;
+  width:8px;height:50px;
+  background:rgba(255,255,255,0.15);
+  border-radius:0 6px 6px 0;
+}
+
+/* ─── SECTION 4: STORIES ─── */
+#stories{
+  padding:80px 48px;
+  background:#fff;
+}
 #stories h2{font-family:var(--hand);font-size:40px;text-align:center;margin-bottom:48px}
-.stories-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:900px;margin:0 auto;}
+.stories-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:28px;
+  max-width:900px;margin:0 auto;
+}
 .story-card{cursor:pointer;transition:transform .2s}
 .story-card:hover{transform:translateY(-6px)}
-.story-img{width:100%;aspect-ratio:4/3;border-radius:16px;border:3px solid #111;box-shadow:5px 5px 0 #111;display:flex;align-items:center;justify-content:center;font-size:36px;margin-bottom:16px;}
-.si-teal{background:var(--teal)}.si-purple{background:var(--purple)}.si-teal2{background:#26C6A6}
+.story-img{
+  width:100%;aspect-ratio:4/3;
+  border-radius:16px;border:3px solid #111;
+  box-shadow:5px 5px 0 #111;
+  display:flex;align-items:center;justify-content:center;
+  font-size:36px;margin-bottom:16px;
+}
+.si-teal{background:var(--teal)}
+.si-purple{background:var(--purple)}
+.si-teal2{background:#26C6A6}
 .story-title{font-weight:800;font-size:15px;margin-bottom:6px}
 .story-desc{font-size:13px;color:#666;line-height:1.6;margin-bottom:8px}
 .story-date{font-size:12px;font-weight:700;color:#111}
-#pricing{padding:80px 48px;background:#f9f9f9;text-align:center;}
+
+/* ─── SECTION 5: PRICING ─── */
+#pricing{
+  padding:80px 48px;
+  background:#f9f9f9;
+  text-align:center;
+}
 #pricing .pre{font-size:14px;color:#777;margin-bottom:8px}
 #pricing h2{font-family:var(--hand);font-size:40px;margin-bottom:32px}
-.billing-toggle{display:inline-flex;border:2px solid #111;border-radius:30px;overflow:hidden;margin-bottom:40px;box-shadow:3px 3px 0 #111;}
-.btog{padding:10px 28px;font-family:'Nunito',sans-serif;font-weight:700;font-size:14px;background:#fff;color:#111;border:none;cursor:pointer;transition:background .2s,color .2s;}
+
+.billing-toggle{
+  display:inline-flex;
+  border:2px solid #111;border-radius:30px;
+  overflow:hidden;margin-bottom:40px;
+  box-shadow:3px 3px 0 #111;
+}
+.btog{
+  padding:10px 28px;font-family:'Nunito',sans-serif;
+  font-weight:700;font-size:14px;
+  background:#fff;color:#111;border:none;cursor:pointer;
+  transition:background .2s,color .2s;
+}
 .btog.active{background:#111;color:#fff}
-.pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:960px;margin:0 auto;align-items:end;}
-.price-card{border-radius:18px;border:2px solid #111;box-shadow:4px 4px 0 #111;padding:24px 20px;text-align:left;transition:transform .2s;}
+
+.pricing-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+  max-width:960px;margin:0 auto;
+  align-items:end;
+}
+.price-card{
+  border-radius:18px;border:2px solid #111;
+  box-shadow:4px 4px 0 #111;
+  padding:24px 20px;text-align:left;
+  transition:transform .2s;
+}
 .price-card:hover{transform:translateY(-6px)}
-.pc-coral{background:#FF5252}.pc-teal{background:var(--teal)}.pc-purple{background:var(--purple)}.pc-yellow{background:#FFC107}
-.pc-purple.featured{transform:scale(1.05);box-shadow:6px 6px 0 #111;}
+.pc-coral{background:#FF5252}
+.pc-teal{background:var(--teal)}
+.pc-purple{background:var(--purple)}
+.pc-yellow{background:#FFC107}
+.pc-purple.featured{
+  transform:scale(1.05);
+  box-shadow:6px 6px 0 #111;
+}
 .price-plan{font-size:13px;font-weight:600;color:rgba(0,0,0,0.5);margin-bottom:6px}
 .pc-purple .price-plan{color:rgba(255,255,255,0.6)}
-.price-amount{font-family:var(--hand);font-size:28px;color:#111;margin-bottom:20px;line-height:1;}
+.price-amount{
+  font-family:var(--hand);font-size:28px;color:#111;
+  margin-bottom:20px;line-height:1;
+}
 .pc-purple .price-amount{color:#fff}
 .price-features{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
 .price-features li{font-size:13px;font-weight:600;color:#111}
 .pc-purple .price-features li{color:#fff}
-.price-cta{width:100%;padding:12px;background:#fff;color:#111;border:2px solid #111;border-radius:10px;box-shadow:3px 3px 0 #111;font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;cursor:pointer;transition:transform .15s,box-shadow .15s;}
+.price-cta{
+  width:100%;padding:12px;
+  background:#fff;color:#111;
+  border:2px solid #111;border-radius:10px;
+  box-shadow:3px 3px 0 #111;
+  font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;
+  cursor:pointer;
+  transition:transform .15s,box-shadow .15s;
+}
 .price-cta:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 #111}
-#download{padding:80px 48px;background:#fff;display:flex;align-items:center;gap:80px;}
+
+/* ─── SECTION 6: DOWNLOAD / REGISTER ─── */
+#download{
+  padding:80px 48px;
+  background:#fff;
+  display:flex;align-items:center;gap:80px;
+}
 .dl-left{flex:1}
-.dl-left h2{font-family:var(--hand);font-size:clamp(28px,4vw,44px);color:#111;line-height:1.3;margin-bottom:16px;}
+.dl-left h2{
+  font-family:var(--hand);font-size:clamp(28px,4vw,44px);
+  color:#111;line-height:1.3;margin-bottom:16px;
+}
 .dl-left p{font-size:15px;color:#555;line-height:1.7;max-width:360px;margin-bottom:28px}
 .dl-btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn-dl-orange{display:flex;align-items:center;gap:8px;padding:12px 22px;background:#FF5252;color:#fff;font-family:'Nunito',sans-serif;font-size:14px;font-weight:700;border:2px solid #111;border-radius:10px;box-shadow:3px 3px 0 #111;cursor:pointer;transition:transform .15s,box-shadow .15s;}
+.btn-dl-orange{
+  display:flex;align-items:center;gap:8px;
+  padding:12px 22px;
+  background:#FF5252;color:#fff;
+  font-family:'Nunito',sans-serif;font-size:14px;font-weight:700;
+  border:2px solid #111;border-radius:10px;
+  box-shadow:3px 3px 0 #111;cursor:pointer;
+  transition:transform .15s,box-shadow .15s;
+}
 .btn-dl-orange:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 #111}
 .btn-dl-orange:nth-child(2){background:#FF9800}
-.form-card{flex:1;max-width:380px;border:2px solid #111;border-radius:20px;box-shadow:5px 5px 0 #111;padding:28px 24px;background:#fff;}
+
+/* Register form */
+.form-card{
+  flex:1;max-width:380px;
+  border:2px solid #111;border-radius:20px;
+  box-shadow:5px 5px 0 #111;
+  padding:28px 24px;
+  background:#fff;
+}
 .form-tabs{display:flex;gap:24px;margin-bottom:24px;border-bottom:2px solid #eee;padding-bottom:12px}
-.ftab{font-weight:700;font-size:15px;color:#ccc;cursor:pointer;padding-bottom:4px;border-bottom:2px solid transparent;transition:color .2s;}
+.ftab{
+  font-weight:700;font-size:15px;color:#ccc;
+  cursor:pointer;padding-bottom:4px;
+  border-bottom:2px solid transparent;
+  transition:color .2s;
+}
 .ftab.active{color:#FF5252;border-bottom-color:#FF5252}
-.form-card input{width:100%;padding:13px 16px;border:2px solid #111;border-radius:10px;font-family:'Nunito',sans-serif;font-size:14px;margin-bottom:12px;background:#fff;outline:none;transition:box-shadow .2s;}
+.form-card input{
+  width:100%;padding:13px 16px;
+  border:2px solid #111;border-radius:10px;
+  font-family:'Nunito',sans-serif;font-size:14px;
+  margin-bottom:12px;background:#fff;outline:none;
+  transition:box-shadow .2s;
+}
 .form-card input:focus{box-shadow:3px 3px 0 #111}
-.form-check{display:flex;align-items:center;gap:10px;margin-bottom:16px;font-size:13px;color:#555;}
-.form-check input[type=checkbox]{width:18px;height:18px;margin:0;accent-color:var(--orange);border-radius:4px;}
-.btn-signin{width:100%;padding:14px;background:#FF5252;color:#fff;border:2px solid #111;border-radius:10px;box-shadow:3px 3px 0 #111;font-family:'Nunito',sans-serif;font-weight:800;font-size:15px;cursor:pointer;transition:transform .15s,box-shadow .15s;}
+.form-check{
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:16px;font-size:13px;color:#555;
+}
+.form-check input[type=checkbox]{
+  width:18px;height:18px;margin:0;
+  accent-color:var(--orange);
+  border-radius:4px;
+}
+.btn-signin{
+  width:100%;padding:14px;
+  background:#FF5252;color:#fff;
+  border:2px solid #111;border-radius:10px;
+  box-shadow:3px 3px 0 #111;
+  font-family:'Nunito',sans-serif;font-weight:800;font-size:15px;
+  cursor:pointer;
+  transition:transform .15s,box-shadow .15s;
+}
 .btn-signin:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 #111}
-#events{padding:80px 48px;background:#f4f0ff;}
+
+/* ─── EVENTS SECTION ─── */
+#events{
+  padding:80px 48px;
+  background:#f4f0ff;
+}
 #events h2{font-family:var(--hand);font-size:40px;text-align:center;margin-bottom:10px}
 #events .events-sub{font-size:15px;color:#666;text-align:center;max-width:500px;margin:0 auto 16px;line-height:1.7}
-.events-filter{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;}
-.ef-btn{padding:8px 20px;border:2px solid #111;border-radius:30px;background:#fff;font-family:'Nunito',sans-serif;font-weight:700;font-size:13px;cursor:pointer;box-shadow:2px 2px 0 #111;transition:transform .15s,background .2s,color .2s;}
+
+.events-filter{
+  display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;
+}
+.ef-btn{
+  padding:8px 20px;
+  border:2px solid #111;border-radius:30px;
+  background:#fff;font-family:'Nunito',sans-serif;font-weight:700;font-size:13px;
+  cursor:pointer;box-shadow:2px 2px 0 #111;
+  transition:transform .15s,background .2s,color .2s;
+}
 .ef-btn:hover{transform:translate(-1px,-1px)}
 .ef-btn.active{background:#111;color:#fff}
-.events-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px;max-width:1100px;margin:0 auto;}
-.event-card{border-radius:18px;border:2px solid #111;box-shadow:4px 4px 0 #111;overflow:hidden;cursor:pointer;background:#fff;transition:transform .2s,box-shadow .2s;}
+
+.events-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:22px;
+  max-width:1100px;margin:0 auto;
+}
+.event-card{
+  border-radius:18px;border:2px solid #111;
+  box-shadow:4px 4px 0 #111;
+  overflow:hidden;cursor:pointer;
+  background:#fff;
+  transition:transform .2s,box-shadow .2s;
+}
 .event-card:hover{transform:translate(-3px,-3px);box-shadow:7px 7px 0 #111}
-.event-card-img{width:100%;height:160px;display:flex;align-items:center;justify-content:center;font-size:52px;position:relative;overflow:hidden;}
-.event-badge{position:absolute;top:12px;right:12px;font-size:11px;font-weight:800;padding:4px 10px;border-radius:20px;border:2px solid #111;background:#fff;}
+.event-card-img{
+  width:100%;height:160px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:52px;
+  position:relative;overflow:hidden;
+}
+.event-badge{
+  position:absolute;top:12px;right:12px;
+  font-size:11px;font-weight:800;
+  padding:4px 10px;border-radius:20px;
+  border:2px solid #111;
+  background:#fff;
+}
 .event-card-body{padding:16px 18px 20px}
 .event-date{font-size:11px;font-weight:700;color:#888;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px}
 .event-title{font-family:var(--hand);font-size:18px;color:#111;margin-bottom:8px;line-height:1.2}
 .event-desc-short{font-size:13px;color:#555;line-height:1.6;margin-bottom:12px}
 .event-meta{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-.event-tag{font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;border:2px solid #111;}
+.event-tag{
+  font-size:11px;font-weight:700;
+  padding:3px 10px;border-radius:20px;
+  border:2px solid #111;
+}
 .event-spots{font-size:12px;color:#888;margin-left:auto}
-.event-card-footer{display:flex;align-items:center;justify-content:space-between;padding:10px 18px;border-top:2px solid #f0f0f0;background:#fafafa;}
+.event-card-footer{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 18px;
+  border-top:2px solid #f0f0f0;
+  background:#fafafa;
+}
 .event-price{font-family:var(--hand);font-size:17px;color:#111}
-.event-join-btn{padding:7px 18px;background:var(--purple);color:#fff;border:2px solid #111;border-radius:8px;box-shadow:2px 2px 0 #111;font-family:'Nunito',sans-serif;font-weight:700;font-size:12px;cursor:pointer;transition:transform .15s;}
+.event-join-btn{
+  padding:7px 18px;
+  background:var(--purple);color:#fff;
+  border:2px solid #111;border-radius:8px;
+  box-shadow:2px 2px 0 #111;
+  font-family:'Nunito',sans-serif;font-weight:700;font-size:12px;
+  cursor:pointer;transition:transform .15s;
+}
 .event-join-btn:hover{transform:translate(-1px,-1px)}
-.modal-overlay{position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.55);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s;}
+
+/* ─── EVENT MODAL ─── */
+.modal-overlay{
+  position:fixed;inset:0;z-index:2000;
+  background:rgba(0,0,0,0.55);
+  display:flex;align-items:center;justify-content:center;
+  padding:20px;
+  opacity:0;pointer-events:none;
+  transition:opacity .3s;
+}
 .modal-overlay.open{opacity:1;pointer-events:all}
-.modal-box{background:#fff;border:3px solid #111;border-radius:24px;box-shadow:8px 8px 0 #111;width:100%;max-width:640px;max-height:88vh;overflow-y:auto;transform:translateY(30px) scale(.97);transition:transform .3s;}
+.modal-box{
+  background:#fff;
+  border:3px solid #111;border-radius:24px;
+  box-shadow:8px 8px 0 #111;
+  width:100%;max-width:640px;
+  max-height:88vh;overflow-y:auto;
+  transform:translateY(30px) scale(.97);
+  transition:transform .3s;
+}
 .modal-overlay.open .modal-box{transform:translateY(0) scale(1)}
-.modal-hero{width:100%;height:200px;display:flex;align-items:center;justify-content:center;font-size:72px;border-radius:20px 20px 0 0;position:relative;}
-.modal-close{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:#fff;border:2px solid #111;box-shadow:2px 2px 0 #111;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:700;transition:transform .15s;}
+.modal-hero{
+  width:100%;height:200px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:72px;
+  border-radius:20px 20px 0 0;
+  position:relative;
+}
+.modal-close{
+  position:absolute;top:14px;right:14px;
+  width:36px;height:36px;border-radius:50%;
+  background:#fff;border:2px solid #111;box-shadow:2px 2px 0 #111;
+  font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;transition:transform .15s;
+}
 .modal-close:hover{transform:scale(1.1)}
 .modal-body{padding:24px 28px 28px}
 .modal-header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:16px}
 .modal-title{font-family:var(--hand);font-size:26px;line-height:1.2;flex:1}
-.modal-price-big{font-family:var(--hand);font-size:26px;color:var(--purple);white-space:nowrap;}
+.modal-price-big{
+  font-family:var(--hand);font-size:26px;
+  color:var(--purple);white-space:nowrap;
+}
 .modal-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
-.modal-tag{font-size:12px;font-weight:700;padding:4px 12px;border-radius:20px;border:2px solid #111;}
-.modal-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;}
-.modal-info-item{background:#f8f8f8;border-radius:12px;border:2px solid #eee;padding:12px 14px;}
+.modal-tag{
+  font-size:12px;font-weight:700;
+  padding:4px 12px;border-radius:20px;
+  border:2px solid #111;
+}
+.modal-info-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:12px;margin-bottom:20px;
+}
+.modal-info-item{
+  background:#f8f8f8;border-radius:12px;
+  border:2px solid #eee;padding:12px 14px;
+}
 .modal-info-item .mii-label{font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
 .modal-info-item .mii-val{font-size:14px;font-weight:700;color:#111}
 .modal-desc-full{font-size:14px;color:#444;line-height:1.8;margin-bottom:20px}
 .modal-schedule{margin-bottom:22px}
 .modal-schedule h4{font-weight:800;font-size:14px;margin-bottom:10px}
-.sched-item{display:flex;gap:12px;align-items:flex-start;padding:8px 0;border-bottom:1px solid #f0f0f0;}
-.sched-time{font-size:12px;font-weight:700;color:var(--purple);min-width:52px;margin-top:2px;}
+.sched-item{
+  display:flex;gap:12px;align-items:flex-start;
+  padding:8px 0;border-bottom:1px solid #f0f0f0;
+}
+.sched-time{
+  font-size:12px;font-weight:700;color:var(--purple);
+  min-width:52px;margin-top:2px;
+}
 .sched-act{font-size:13px;color:#333;line-height:1.5}
 .modal-speakers{margin-bottom:22px}
 .modal-speakers h4{font-weight:800;font-size:14px;margin-bottom:10px}
 .speaker-row{display:flex;gap:10px;align-items:center;margin-bottom:8px}
-.speaker-ava{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;border:2px solid #111;flex-shrink:0;}
+.speaker-ava{
+  width:38px;height:38px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;border:2px solid #111;flex-shrink:0;
+}
 .speaker-name{font-weight:700;font-size:14px}
 .speaker-role{font-size:12px;color:#888}
-.modal-register-btn{width:100%;padding:16px;background:var(--purple);color:#fff;border:2px solid #111;border-radius:12px;box-shadow:4px 4px 0 #111;font-family:'Nunito',sans-serif;font-weight:800;font-size:16px;cursor:pointer;transition:transform .15s,box-shadow .15s;}
+.modal-register-btn{
+  width:100%;padding:16px;
+  background:var(--purple);color:#fff;
+  border:2px solid #111;border-radius:12px;
+  box-shadow:4px 4px 0 #111;
+  font-family:'Nunito',sans-serif;font-weight:800;font-size:16px;
+  cursor:pointer;transition:transform .15s,box-shadow .15s;
+}
 .modal-register-btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #111}
 .modal-register-btn.registered{background:var(--teal);color:#111}
 
-/* ── TOAST ── */
-.toast{
-  position:fixed;bottom:30px;right:30px;z-index:9999;
-  background:#111;color:#fff;
-  border-radius:14px;border:2px solid rgba(255,255,255,0.2);
-  box-shadow:4px 4px 0 rgba(0,0,0,0.25);
-  padding:16px 22px;max-width:320px;
-  transform:translateY(100px);opacity:0;
-  transition:transform .4s cubic-bezier(.4,0,.2,1),opacity .4s;
+/* ─── FOOTER ─── */
+footer{
+  background:var(--purple);
+  padding:28px 48px;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:20px;
 }
-.toast.show{transform:translateY(0);opacity:1}
-.toast-icon{font-size:22px;display:block;margin-bottom:6px}
-.toast-title{font-weight:800;font-size:15px;margin-bottom:3px}
-.toast-msg{color:rgba(255,255,255,0.75);font-size:13px}
-.toast.toast-email{background:var(--purple)}
-.toast.toast-sms{background:#1a7a4a}
-
-footer{background:var(--purple);padding:28px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;}
-.footer-logo{background:var(--teal);color:#fff;font-family:var(--hand);font-size:14px;padding:6px 12px;border-radius:8px;border:2px solid #000;box-shadow:2px 2px 0 #000;}
+.footer-logo{
+  background:var(--teal);color:#fff;
+  font-family:var(--hand);font-size:14px;
+  padding:6px 12px;border-radius:8px;
+  border:2px solid #000;box-shadow:2px 2px 0 #000;
+}
 .footer-links{display:flex;gap:28px}
-.footer-links a{color:rgba(255,255,255,0.8);font-size:14px;font-weight:600;text-decoration:none;transition:color .2s;}
+.footer-links a{
+  color:rgba(255,255,255,0.8);font-size:14px;font-weight:600;
+  text-decoration:none;transition:color .2s;
+}
 .footer-links a:hover{color:#fff}
 .footer-dl{display:flex;gap:12px}
-.footer-btn{display:flex;align-items:center;gap:8px;padding:10px 18px;background:var(--orange);color:#111;font-family:'Nunito',sans-serif;font-weight:700;font-size:13px;border:2px solid #111;border-radius:8px;box-shadow:2px 2px 0 #111;cursor:pointer;transition:transform .15s;}
+.footer-btn{
+  display:flex;align-items:center;gap:8px;
+  padding:10px 18px;
+  background:var(--orange);color:#111;
+  font-family:'Nunito',sans-serif;font-weight:700;font-size:13px;
+  border:2px solid #111;border-radius:8px;
+  box-shadow:2px 2px 0 #111;cursor:pointer;
+  transition:transform .15s;
+}
 .footer-btn:hover{transform:translate(-1px,-1px)}
+
+/* ─── SCROLL REVEAL ─── */
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .6s,transform .6s}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .reveal-left{opacity:0;transform:translateX(-30px);transition:opacity .6s,transform .6s}
 .reveal-left.visible{opacity:1;transform:translateX(0)}
 .reveal-right{opacity:0;transform:translateX(30px);transition:opacity .6s,transform .6s}
 .reveal-right.visible{opacity:1;transform:translateX(0)}
+
+/* ─── RESPONSIVE ─── */
 @media(max-width:768px){
   nav{padding:16px 24px}
   #hero{flex-direction:column;padding:100px 24px 60px;text-align:center}
@@ -244,7 +677,6 @@ footer{background:var(--purple);padding:28px 48px;display:flex;align-items:cente
   #events{padding:60px 24px}
   .modal-body{padding:18px 18px 22px}
   .modal-info-grid{grid-template-columns:1fr}
-  .toast{bottom:16px;right:16px;left:16px;max-width:none}
 }
 @media(max-width:480px){
   .pricing-grid{grid-template-columns:1fr}
@@ -254,6 +686,9 @@ footer{background:var(--purple);padding:28px 48px;display:flex;align-items:cente
 </head>
 <body>
 
+<!-- ══════════════════════════════════
+     NAV
+══════════════════════════════════ -->
 <nav>
   <div class="logo-box">EASY</div>
   <div class="nav-icons">
@@ -264,10 +699,15 @@ footer{background:var(--purple);padding:28px 48px;display:flex;align-items:cente
   </div>
 </nav>
 
+<!-- ══════════════════════════════════
+     SECTION 1: HERO
+══════════════════════════════════ -->
 <section id="hero">
+  <!-- clouds -->
   <div class="cloud c1"></div>
   <div class="cloud c2"></div>
   <div class="cloud c3"></div>
+
   <div class="hero-left reveal-left">
     <h1>The best<br>fitness tracker!</h1>
     <p>Nisi ullamco tempor tempor nulla labore ad labore sit eu duis. Ut et esse cupidatat consequat ea exercitation.</p>
@@ -276,6 +716,7 @@ footer{background:var(--purple);padding:28px 48px;display:flex;align-items:cente
       <a href="#" class="btn-dl"><span>▶</span> Download</a>
     </div>
   </div>
+
   <div class="hero-right reveal-right">
     <div class="phone">
       <div class="phone-chart">
@@ -286,29 +727,70 @@ footer{background:var(--purple);padding:28px 48px;display:flex;align-items:cente
         </div>
       </div>
       <div class="phone-grid">
-        <div class="phone-stat"><div class="ps-num">5000</div><div class="ps-lbl">Steps</div></div>
-        <div class="phone-stat" style="background:#fff"><div class="ps-num">4 200</div><div class="ps-lbl">Meters</div></div>
-        <div class="phone-stat"><div class="ps-num">12</div><div class="ps-lbl">Exercises</div></div>
-        <div class="phone-stat"><div class="ps-num">5</div><div class="ps-lbl">Achievements</div></div>
+        <div class="phone-stat">
+          <div class="ps-num">5000</div>
+          <div class="ps-lbl">Steps</div>
+        </div>
+        <div class="phone-stat" style="background:#fff">
+          <div class="ps-num">4 200</div>
+          <div class="ps-lbl">Meters</div>
+        </div>
+        <div class="phone-stat">
+          <div class="ps-num">12</div>
+          <div class="ps-lbl">Exercises</div>
+        </div>
+        <div class="phone-stat">
+          <div class="ps-num">5</div>
+          <div class="ps-lbl">Achievements</div>
+        </div>
       </div>
       <button class="phone-btn">Start</button>
     </div>
   </div>
 </section>
 
+<!-- ══════════════════════════════════
+     SECTION 2: ABOUT
+══════════════════════════════════ -->
 <section id="about">
   <h2 class="reveal">About text</h2>
   <p class="sub reveal">Nisi ullamco tempor tempor nulla labore ad labore sit eu duis. Ut et esse cupidatat consequat.</p>
+
   <div class="slider-wrap">
     <div class="slider-track" id="sliderTrack">
-      <div class="feature-card fc-orange"><div class="fc-img">🏋️</div><div class="fc-title">Nisi ullamco tempor tempor nulla.</div><div class="fc-desc">Nisi ullamco tempor tempor nulla labore ad labore sit eu duis.</div></div>
-      <div class="feature-card fc-coral"><div class="fc-img">🏃</div><div class="fc-title">Nisi ullamco tempor tempor nulla.</div><div class="fc-desc">Nisi ullamco tempor tempor nulla labore ad labore sit eu duis.</div></div>
-      <div class="feature-card fc-pink"><div class="fc-img">💪</div><div class="fc-title">Nisi ullamco tempor tempor nulla.</div><div class="fc-desc">Nisi ullamco tempor tempor nulla labore ad labore sit eu duis.</div></div>
-      <div class="feature-card fc-yellow"><div class="fc-img">🎯</div><div class="fc-title">Nisi ullamco tempor tempor nulla.</div><div class="fc-desc">Nisi ullamco tempor tempor nulla labore ad labore sit eu duis.</div></div>
-      <div class="feature-card fc-teal"><div class="fc-img">❤️</div><div class="fc-title">Nisi ullamco tempor tempor nulla.</div><div class="fc-desc">Nisi ullamco tempor tempor nulla labore ad labore sit eu duis.</div></div>
-      <div class="feature-card fc-purple"><div class="fc-img">🏆</div><div class="fc-title">Nisi ullamco tempor tempor nulla.</div><div class="fc-desc">Nisi ullamco tempor tempor nulla labore ad labore sit eu duis.</div></div>
+      <div class="feature-card fc-orange">
+        <div class="fc-img">🏋️</div>
+        <div class="fc-title">Nisi ullamco tempor tempor nulla.</div>
+        <div class="fc-desc">Nisi ullamco tempor tempor nulla labore ad labore sit eu duis.</div>
+      </div>
+      <div class="feature-card fc-coral">
+        <div class="fc-img">🏃</div>
+        <div class="fc-title">Nisi ullamco tempor tempor nulla.</div>
+        <div class="fc-desc">Nisi ullamco tempor tempor nulla labore ad labore sit eu duis.</div>
+      </div>
+      <div class="feature-card fc-pink">
+        <div class="fc-img">💪</div>
+        <div class="fc-title">Nisi ullamco tempor tempor nulla.</div>
+        <div class="fc-desc">Nisi ullamco tempor tempor nulla labore ad labore sit eu duis.</div>
+      </div>
+      <div class="feature-card fc-yellow">
+        <div class="fc-img">🎯</div>
+        <div class="fc-title">Nisi ullamco tempor tempor nulla.</div>
+        <div class="fc-desc">Nisi ullamco tempor tempor nulla labore ad labore sit eu duis.</div>
+      </div>
+      <div class="feature-card fc-teal">
+        <div class="fc-img">❤️</div>
+        <div class="fc-title">Nisi ullamco tempor tempor nulla.</div>
+        <div class="fc-desc">Nisi ullamco tempor tempor nulla labore ad labore sit eu duis.</div>
+      </div>
+      <div class="feature-card fc-purple">
+        <div class="fc-img">🏆</div>
+        <div class="fc-title">Nisi ullamco tempor tempor nulla.</div>
+        <div class="fc-desc">Nisi ullamco tempor tempor nulla labore ad labore sit eu duis.</div>
+      </div>
     </div>
   </div>
+
   <div class="slider-dots" id="sliderDots">
     <div class="sdot active" data-i="0"></div>
     <div class="sdot" data-i="1"></div>
@@ -319,28 +801,41 @@ footer{background:var(--purple);padding:28px 48px;display:flex;align-items:cente
   </div>
 </section>
 
+<!-- ══════════════════════════════════
+     SECTION 3: WATCH
+══════════════════════════════════ -->
 <section id="watch">
   <div class="watch-left reveal-left">
     <h2>Start training<br>already on your<br>watch</h2>
     <p>Nisi ullamco tempor tempor nulla labore ad labore sit eu duis. Ut et esse cupidatat consequat.</p>
     <p>Nisi ullamco tempor tempor nulla labore ad labore sit eu duis. Ut et esse cupidatat consequat.</p>
     <div class="email-form">
-      <input type="email" placeholder="Email" id="watchEmail">
-      <button onclick="handleWatchEmail()">Let's GO!</button>
+      <input type="email" placeholder="Email">
+      <button>Let's GO!</button>
     </div>
   </div>
+
   <div class="watch-right reveal-right">
     <div class="watch-device">
       <div class="watch-time">12:05</div>
       <div class="watch-temp">4 c</div>
       <div class="watch-rings">
         <svg width="110" height="110" viewBox="0 0 110 110">
+          <!-- outer teal ring -->
           <circle cx="55" cy="55" r="48" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="10"/>
-          <circle cx="55" cy="55" r="48" fill="none" stroke="#1DE9B6" stroke-width="10" stroke-dasharray="301.6" stroke-dashoffset="60" stroke-linecap="round" transform="rotate(-90 55 55)"/>
+          <circle cx="55" cy="55" r="48" fill="none" stroke="#1DE9B6" stroke-width="10"
+            stroke-dasharray="301.6" stroke-dashoffset="60" stroke-linecap="round"
+            transform="rotate(-90 55 55)"/>
+          <!-- middle orange ring -->
           <circle cx="55" cy="55" r="36" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="10"/>
-          <circle cx="55" cy="55" r="36" fill="none" stroke="#FF9800" stroke-width="10" stroke-dasharray="226.2" stroke-dashoffset="80" stroke-linecap="round" transform="rotate(-90 55 55)"/>
+          <circle cx="55" cy="55" r="36" fill="none" stroke="#FF9800" stroke-width="10"
+            stroke-dasharray="226.2" stroke-dashoffset="80" stroke-linecap="round"
+            transform="rotate(-90 55 55)"/>
+          <!-- inner red ring -->
           <circle cx="55" cy="55" r="24" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="10"/>
-          <circle cx="55" cy="55" r="24" fill="none" stroke="#FF5252" stroke-width="10" stroke-dasharray="150.8" stroke-dashoffset="40" stroke-linecap="round" transform="rotate(-90 55 55)"/>
+          <circle cx="55" cy="55" r="24" fill="none" stroke="#FF5252" stroke-width="10"
+            stroke-dasharray="150.8" stroke-dashoffset="40" stroke-linecap="round"
+            transform="rotate(-90 55 55)"/>
         </svg>
       </div>
       <div class="watch-btns">
@@ -352,50 +847,96 @@ footer{background:var(--purple);padding:28px 48px;display:flex;align-items:cente
   </div>
 </section>
 
+<!-- ══════════════════════════════════
+     SECTION 4: STORIES
+══════════════════════════════════ -->
 <section id="stories">
   <h2 class="reveal">Stories of our users</h2>
   <div class="stories-grid">
-    <div class="story-card reveal"><div class="story-img si-teal">🏔️</div><div class="story-title">Stories of our users</div><div class="story-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div><div class="story-date">17.10.20</div></div>
-    <div class="story-card reveal" style="transition-delay:.1s"><div class="story-img si-purple">🏔️</div><div class="story-title">Stories of our users</div><div class="story-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div><div class="story-date">17.10.20</div></div>
-    <div class="story-card reveal" style="transition-delay:.2s"><div class="story-img si-teal2">🏔️</div><div class="story-title">Stories of our users</div><div class="story-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div><div class="story-date">17.10.20</div></div>
+    <div class="story-card reveal">
+      <div class="story-img si-teal">🏔️</div>
+      <div class="story-title">Stories of our users</div>
+      <div class="story-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+      <div class="story-date">17.10.20</div>
+    </div>
+    <div class="story-card reveal" style="transition-delay:.1s">
+      <div class="story-img si-purple">🏔️</div>
+      <div class="story-title">Stories of our users</div>
+      <div class="story-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+      <div class="story-date">17.10.20</div>
+    </div>
+    <div class="story-card reveal" style="transition-delay:.2s">
+      <div class="story-img si-teal2">🏔️</div>
+      <div class="story-title">Stories of our users</div>
+      <div class="story-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+      <div class="story-date">17.10.20</div>
+    </div>
   </div>
 </section>
 
+<!-- ══════════════════════════════════
+     SECTION 5: PRICING
+══════════════════════════════════ -->
 <section id="pricing">
   <p class="pre reveal">We have selected the best payment solutions for you.</p>
   <h2 class="reveal">Choose your tariff plan</h2>
+
   <div class="billing-toggle reveal">
     <button class="btog active" id="monthBtn" onclick="setBilling('month')">Month</button>
     <button class="btog" id="yearBtn" onclick="setBilling('year')">Years</button>
   </div>
+
   <div class="pricing-grid">
     <div class="price-card pc-coral reveal">
       <div class="price-plan">Free Plan</div>
       <div class="price-amount" id="p0">$0 <span style="font-size:16px">mounth</span></div>
-      <ul class="price-features"><li>5 Email</li><li>Free Share</li><li>200 Clients</li><li>Chat support</li></ul>
+      <ul class="price-features">
+        <li>5 Email</li>
+        <li>Free Share</li>
+        <li>200 Clients</li>
+        <li>Chat support</li>
+      </ul>
       <button class="price-cta">Get started</button>
     </div>
     <div class="price-card pc-teal reveal" style="transition-delay:.1s">
       <div class="price-plan">Basic</div>
       <div class="price-amount" id="p1">$5 <span style="font-size:16px">mounth</span></div>
-      <ul class="price-features"><li>200 Email</li><li>Free Share</li><li>500 Clients</li><li>Chat + Email support</li></ul>
+      <ul class="price-features">
+        <li>200 Email</li>
+        <li>Free Share</li>
+        <li>500 Clients</li>
+        <li>Chat + Email support</li>
+      </ul>
       <button class="price-cta">Get started</button>
     </div>
     <div class="price-card pc-purple featured reveal" style="transition-delay:.2s">
       <div class="price-plan">Advanced</div>
       <div class="price-amount" id="p2">$9 <span style="font-size:16px">mounth</span></div>
-      <ul class="price-features"><li>2 000 Email</li><li>Free Share</li><li>1 000 Clients</li><li>Chat + Email support</li></ul>
+      <ul class="price-features">
+        <li>2 000 Email</li>
+        <li>Free Share</li>
+        <li>1 000 Clients</li>
+        <li>Chat + Email support</li>
+      </ul>
       <button class="price-cta">Get started</button>
     </div>
     <div class="price-card pc-yellow reveal" style="transition-delay:.3s">
       <div class="price-plan">Most Advanced</div>
       <div class="price-amount" id="p3">$12 <span style="font-size:16px">mounth</span></div>
-      <ul class="price-features"><li>Unlim Email</li><li>Free Share</li><li>10 000 Clients</li><li>Personal Manager</li></ul>
+      <ul class="price-features">
+        <li>Unlim Email</li>
+        <li>Free Share</li>
+        <li>10 000 Clients</li>
+        <li>Personal Manager</li>
+      </ul>
       <button class="price-cta">Get started</button>
     </div>
   </div>
 </section>
 
+<!-- ══════════════════════════════════
+     SECTION 6: DOWNLOAD + FORM
+══════════════════════════════════ -->
 <section id="download">
   <div class="dl-left reveal-left">
     <h2>Download now<br>and get a bonus!</h2>
@@ -405,37 +946,42 @@ footer{background:var(--purple);padding:28px 48px;display:flex;align-items:cente
       <button class="btn-dl-orange"><span>▶</span> Download</button>
     </div>
   </div>
+
   <div class="form-card reveal-right">
     <div class="form-tabs">
       <div class="ftab active" onclick="switchTab(this,'signin')">Sign in</div>
       <div class="ftab" onclick="switchTab(this,'login')">Log in</div>
     </div>
     <div id="signin-form">
-      <input type="text" placeholder="Your name" id="siName">
-      <input type="email" placeholder="Email" id="siEmail">
-      <input type="text" placeholder="Company" id="siCompany">
-      <input type="tel" placeholder="Phone (e.g. +998901234567)" id="siPhone">
+      <input type="text" placeholder="Your name">
+      <input type="email" placeholder="Email">
+      <input type="text" placeholder="Company">
+      <input type="text" placeholder="Company">
       <div class="form-check">
         <input type="checkbox" checked id="agree">
         <label for="agree">Lorem ipsum dolor sit amet.</label>
       </div>
-      <button class="btn-signin" onclick="handleSignin()">Sign in</button>
+      <button class="btn-signin">Sign in</button>
     </div>
     <div id="login-form" style="display:none">
-      <input type="email" placeholder="Email" id="liEmail">
-      <input type="password" placeholder="Password" id="liPass">
+      <input type="email" placeholder="Email">
+      <input type="password" placeholder="Password">
       <div class="form-check">
         <input type="checkbox" id="remember">
         <label for="remember">Remember me</label>
       </div>
-      <button class="btn-signin" onclick="handleLogin()">Log in</button>
+      <button class="btn-signin">Log in</button>
     </div>
   </div>
 </section>
 
+<!-- ══════════════════════════════════
+     SECTION 7: EVENTS
+══════════════════════════════════ -->
 <section id="events">
   <h2 class="reveal">Upcoming Events</h2>
   <p class="events-sub reveal">Join our fitness community events — marathons, yoga camps, workshops and much more!</p>
+
   <div class="events-filter reveal">
     <button class="ef-btn active" onclick="filterEvents('all',this)">All</button>
     <button class="ef-btn" onclick="filterEvents('marathon',this)">🏃 Marathon</button>
@@ -444,9 +990,11 @@ footer{background:var(--purple);padding:28px 48px;display:flex;align-items:cente
     <button class="ef-btn" onclick="filterEvents('cycling',this)">🚴 Cycling</button>
     <button class="ef-btn" onclick="filterEvents('nutrition',this)">🥗 Nutrition</button>
   </div>
+
   <div class="events-grid" id="eventsGrid"></div>
 </section>
 
+<!-- EVENT MODAL -->
 <div class="modal-overlay" id="eventModal" onclick="closeModal(event)">
   <div class="modal-box" id="modalBox">
     <div class="modal-hero" id="modalHero"></div>
@@ -465,13 +1013,9 @@ footer{background:var(--purple);padding:28px 48px;display:flex;align-items:cente
   </div>
 </div>
 
-<!-- TOAST -->
-<div class="toast" id="toast">
-  <span class="toast-icon" id="toastIcon"></span>
-  <div class="toast-title" id="toastTitle"></div>
-  <div class="toast-msg" id="toastMsg"></div>
-</div>
-
+<!-- ══════════════════════════════════
+     FOOTER
+══════════════════════════════════ -->
 <footer>
   <div class="footer-logo">EASY</div>
   <div class="footer-links">
@@ -486,91 +1030,7 @@ footer{background:var(--purple);padding:28px 48px;display:flex;align-items:cente
 </footer>
 
 <script>
-/* ══ CONFIG ══ */
-const ADMIN_EMAIL = 'alsetnikol@gmail.com';
-const ADMIN_PHONE = '+998917938285';
-
-/* ══ TOAST ══ */
-let toastTimer;
-function showToast(icon, title, msg, type) {
-  const t = document.getElementById('toast');
-  document.getElementById('toastIcon').textContent = icon;
-  document.getElementById('toastTitle').textContent = title;
-  document.getElementById('toastMsg').textContent = msg;
-  t.className = 'toast ' + (type || '');
-  t.classList.add('show');
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => t.classList.remove('show'), 4500);
-}
-
-/* ══ EMAIL via mailto ══ */
-function sendAdminEmail(subject, body) {
-  const a = document.createElement('a');
-  a.href = 'mailto:' + ADMIN_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-  a.target = '_blank';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-}
-
-/* ══ SMS via sms: ══ */
-function sendAdminSMS(msg) {
-  const a = document.createElement('a');
-  a.href = 'sms:' + ADMIN_PHONE + '?body=' + encodeURIComponent(msg);
-  a.target = '_blank';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-}
-
-/* ══ WATCH SECTION EMAIL ══ */
-function handleWatchEmail() {
-  const email = document.getElementById('watchEmail').value.trim();
-  if (!email || !email.includes('@')) {
-    showToast('⚠️', 'Email noto\'g\'ri', 'Iltimos, to\'g\'ri email kiriting.', '');
-    return;
-  }
-  const subject = 'Easy App — Watch Feature Interest';
-  const body = 'Yangi foydalanuvchi watch bo\'limiga qiziqdi:\n\nEmail: ' + email + '\nSana: ' + new Date().toLocaleString('ru-RU');
-  sendAdminEmail(subject, body);
-  showToast('📧', 'Email yuborilmoqda!', ADMIN_EMAIL + ' ga yo\'naltirildi.', 'toast-email');
-  document.getElementById('watchEmail').value = '';
-}
-
-/* ══ SIGN IN ══ */
-function handleSignin() {
-  const name    = document.getElementById('siName').value.trim();
-  const email   = document.getElementById('siEmail').value.trim();
-  const company = document.getElementById('siCompany').value.trim();
-  const phone   = document.getElementById('siPhone').value.trim();
-  if (!name || !email) {
-    showToast('⚠️', 'Ma\'lumot yetishmaydi', 'Ism va email majburiy.', '');
-    return;
-  }
-  const subject = 'Easy App — Yangi ro\'yxatdan o\'tish: ' + name;
-  const body = 'Yangi foydalanuvchi:\n\nIsm: ' + name + '\nEmail: ' + email + '\nKompaniya: ' + (company || '—') + '\nTelefon: ' + (phone || '—') + '\nSana: ' + new Date().toLocaleString('ru-RU');
-  sendAdminEmail(subject, body);
-  if (phone) {
-    setTimeout(() => sendAdminSMS('Easy App: Yangi user! ' + name + ', ' + phone + ', ' + email), 800);
-  }
-  showToast('✅', 'Muvaffaqiyatli!', 'Email (va SMS) yuborilmoqda.', 'toast-email');
-  ['siName','siEmail','siCompany','siPhone'].forEach(id => document.getElementById(id).value = '');
-}
-
-/* ══ LOG IN ══ */
-function handleLogin() {
-  const email = document.getElementById('liEmail').value.trim();
-  if (!email) {
-    showToast('⚠️', 'Email kiriting', 'Iltimos, emailingizni kiriting.', '');
-    return;
-  }
-  const subject = 'Easy App — Login so\'rovi';
-  const body = 'Login urinishi:\n\nEmail: ' + email + '\nSana: ' + new Date().toLocaleString('ru-RU');
-  sendAdminEmail(subject, body);
-  showToast('🔐', 'Kirish so\'rovi!', ADMIN_EMAIL + ' ga xabar ketdi.', 'toast-email');
-}
-
-/* ══ PHONE BARS ══ */
+/* ── Phone chart bars ── */
 const heights = [30,45,55,40,65,50,70,48,60,38,52];
 const heroBarsEl = document.getElementById('heroBars');
 heights.forEach((h,i) => {
@@ -580,33 +1040,35 @@ heights.forEach((h,i) => {
   heroBarsEl.appendChild(b);
 });
 
-/* ══ SLIDER ══ */
+/* ── Slider ── */
 const track = document.getElementById('sliderTrack');
 const dots = document.querySelectorAll('.sdot');
 let current = 0;
-const cardW = 300;
+const cardW = 300; // approx card width + gap
+
 function goTo(i) {
   current = i;
-  track.style.transform = 'translateX(-' + (i * cardW) + 'px)';
+  track.style.transform = `translateX(-${i * (cardW)}px)`;
   dots.forEach((d,j) => d.classList.toggle('active', j===i));
 }
 dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.i)));
+// auto slide
 setInterval(() => goTo((current+1) % dots.length), 3500);
 
-/* ══ BILLING ══ */
+/* ── Billing toggle ── */
 const monthly = ['$0','$5','$9','$12'];
 const yearly  = ['$0','$48','$86','$115'];
 function setBilling(mode) {
   const prices = mode==='month' ? monthly : yearly;
   const suffix = mode==='month' ? 'mounth' : 'year';
   ['p0','p1','p2','p3'].forEach((id,i) => {
-    document.getElementById(id).innerHTML = prices[i] + ' <span style="font-size:16px">' + suffix + '</span>';
+    document.getElementById(id).innerHTML = `${prices[i]} <span style="font-size:16px">${suffix}</span>`;
   });
   document.getElementById('monthBtn').classList.toggle('active', mode==='month');
   document.getElementById('yearBtn').classList.toggle('active', mode==='year');
 }
 
-/* ══ FORM TABS ══ */
+/* ── Form tabs ── */
 function switchTab(el, form) {
   document.querySelectorAll('.ftab').forEach(t => t.classList.remove('active'));
   el.classList.add('active');
@@ -614,14 +1076,14 @@ function switchTab(el, form) {
   document.getElementById('login-form').style.display  = form==='login'?'block':'none';
 }
 
-/* ══ SCROLL REVEAL ══ */
+/* ── Scroll reveal ── */
 const revealEls = document.querySelectorAll('.reveal,.reveal-left,.reveal-right');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.15 });
 revealEls.forEach(el => observer.observe(el));
 
-/* ══ PRICE CTA ══ */
+/* ── Price card hover ripple ── */
 document.querySelectorAll('.price-cta').forEach(btn => {
   btn.addEventListener('click', function() {
     this.textContent = '✓ Selected!';
@@ -629,18 +1091,220 @@ document.querySelectorAll('.price-cta').forEach(btn => {
   });
 });
 
-/* ══ EVENTS DATA ══ */
+/* ══════════════════════════════════
+   EVENTS DATA & LOGIC
+══════════════════════════════════ */
 const EVENTS = [
-  {id:1,emoji:'🏃',bg:'#FF5252',category:'marathon',badge:'Hot',badgeBg:'#FFC107',date:'Jun 15, 2026',title:'City Spring Marathon',shortDesc:'Classic 42km city marathon through the heart of downtown. All levels welcome!',price:'$25',tags:[{label:'Marathon',bg:'#FF5252'},{label:'Outdoor',bg:'#fff'}],location:'Central Park, NYC',time:'07:00 AM',duration:'6 hrs',spots:'342 left',fullDesc:'Join thousands of runners in our annual City Spring Marathon. The route winds through the most scenic parts of downtown, finishing at the iconic Central Park. Whether you\'re a seasoned athlete or a first-timer, this event has everything: pacers, hydration stations every 3km, post-race party and finisher medals.',schedule:[{t:'06:00',a:'Registration & warm-up zone opens'},{t:'07:00',a:'Race start — Wave A (elite & sub-4h runners)'},{t:'07:15',a:'Wave B — general participants'},{t:'12:00',a:'Course closes, finisher ceremony'},{t:'13:00',a:'Post-race party & live music'}],speakers:[{ava:'🏅',bg:'#FFE0E0',name:'Alex Rivera',role:'Race Director & Coach'},{ava:'🩺',bg:'#E0F7FA',name:'Dr. Sarah Kim',role:'Sports Medicine Advisor'}]},
-  {id:2,emoji:'🧘',bg:'#1DE9B6',category:'yoga',badge:'Popular',badgeBg:'#7B2FFF',date:'Jun 22, 2026',title:'Sunrise Beach Yoga Camp',shortDesc:'3-day immersive yoga retreat on the beach. Restore, breathe, and reconnect.',price:'$89',tags:[{label:'Yoga',bg:'#1DE9B6'},{label:'Beach',bg:'#fff'}],location:'Miami Beach, FL',time:'05:30 AM',duration:'3 days',spots:'18 left',fullDesc:'Wake up to the sound of waves and join our certified yoga instructors for a 3-day sunrise retreat. Sessions include Vinyasa, Yin Yoga, breathwork, and meditation. All skill levels are welcome. Package includes daily healthy breakfast, yoga mat rental, and a closing sunset ceremony.',schedule:[{t:'05:30',a:'Sunrise Vinyasa session on the sand'},{t:'07:30',a:'Healthy breakfast & nutrition talk'},{t:'10:00',a:'Yin Yoga & deep stretch'},{t:'12:30',a:'Free time / beach walk'},{t:'18:00',a:'Evening meditation & breathwork'}],speakers:[{ava:'🌸',bg:'#F3E5F5',name:'Maya Patel',role:'Head Yoga Instructor (RYT-500)'},{ava:'🌿',bg:'#E8F5E9',name:'Jordan Lee',role:'Mindfulness & Breathwork Coach'}]},
-  {id:3,emoji:'🏋️',bg:'#7B2FFF',category:'workshop',badge:'New',badgeBg:'#1DE9B6',date:'Jul 5, 2026',title:'Strength & Conditioning Workshop',shortDesc:'Master the fundamentals of strength training. Deadlifts, squats, and Olympic lifts taught by elite coaches.',price:'$45',tags:[{label:'Workshop',bg:'#7B2FFF'},{label:'Gym',bg:'#fff'}],location:'PowerFit Gym, LA',time:'09:00 AM',duration:'4 hrs',spots:'29 left',fullDesc:'A hands-on workshop designed to fix your form and supercharge your strength gains. You\'ll work in small groups (max 8 per coach) with certified strength & conditioning specialists. Covers squat mechanics, deadlift variations, Olympic lifting basics, and program design. Equipment provided.',schedule:[{t:'09:00',a:'Welcome & mobility warm-up'},{t:'09:30',a:'Squat mechanics deep dive'},{t:'10:30',a:'Deadlift variations & cueing'},{t:'11:15',a:'Olympic lifting intro (clean & snatch)'},{t:'12:00',a:'Q&A, programming advice & cool-down'}],speakers:[{ava:'💪',bg:'#EDE7F6',name:'Coach Marcus Bell',role:'NSCA-CSCS, 10yr elite coach'},{ava:'🏆',bg:'#FFF8E1',name:'Tina Okafor',role:'Olympic Weightlifting Champion'}]},
-  {id:4,emoji:'🚴',bg:'#FF9800',category:'cycling',badge:'Free',badgeBg:'#4CAF50',date:'Jul 12, 2026',title:'Community Bike Ride',shortDesc:'A fun 30km group ride through city parks. Beginner-friendly, helmets provided.',price:'Free',tags:[{label:'Cycling',bg:'#FF9800'},{label:'Outdoor',bg:'#fff'}],location:'Riverside Park, Chicago',time:'08:00 AM',duration:'3 hrs',spots:'Unlimited',fullDesc:'No experience? No problem! Our community bike ride is open to everyone. We ride at a comfortable pace with volunteer ride marshals at front and back. The 30km route passes through four city parks with planned photo stops and a mid-ride smoothie break. Bring water and sunscreen!',schedule:[{t:'08:00',a:'Meet-up, helmet fitting & bike check'},{t:'08:30',a:'Group safety briefing & route overview'},{t:'09:00',a:'Ride begins — Riverside Park loop'},{t:'10:00',a:'Pit stop: smoothies & group photo'},{t:'11:00',a:'Finish line & community BBQ'}],speakers:[{ava:'🚴',bg:'#FFF3E0',name:'Denise Chow',role:'Ride Organizer & Cycling Coach'},{ava:'🛠️',bg:'#E8F5E9',name:'Pablo Gutierrez',role:'Bike Safety & Maintenance Expert'}]},
-  {id:5,emoji:'🥗',bg:'#4CAF50',category:'nutrition',badge:'Limited',badgeBg:'#FF5252',date:'Jul 19, 2026',title:'Sports Nutrition Masterclass',shortDesc:'Learn exactly what to eat before, during and after training. Science-backed meal planning for athletes.',price:'$35',tags:[{label:'Nutrition',bg:'#4CAF50'},{label:'Indoor',bg:'#fff'}],location:'FitHub Studio, Boston',time:'11:00 AM',duration:'2.5 hrs',spots:'12 left',fullDesc:'Sports dietitian Dr. Emma Walsh breaks down the science of fueling your workouts. You\'ll leave with a personalized macro blueprint, a 7-day meal plan template, and knowledge of supplements that actually work. Includes a cooking demo of three high-protein, athlete-approved meals. Meal samples included.',schedule:[{t:'11:00',a:'Introduction: myths vs. science of sports nutrition'},{t:'11:40',a:'Macros 101 — carbs, protein, fats for athletes'},{t:'12:20',a:'Meal timing & pre/post workout nutrition'},{t:'13:00',a:'Live cooking demo & tasting'},{t:'13:20',a:'Q&A & personalized macro consultation'}],speakers:[{ava:'🥦',bg:'#E8F5E9',name:'Dr. Emma Walsh',role:'Registered Sports Dietitian (RD, CSSD)'},{ava:'👨‍🍳',bg:'#FFF8E1',name:'Chef Raj Nair',role:'Athlete Performance Chef'}]},
-  {id:6,emoji:'🏊',bg:'#00BCD4',category:'workshop',badge:'New',badgeBg:'#FF9800',date:'Jul 26, 2026',title:'Open Water Swimming Clinic',shortDesc:'Conquer open water! Technique, sighting, safety and ocean swimming confidence-building.',price:'$55',tags:[{label:'Swimming',bg:'#00BCD4'},{label:'Outdoor',bg:'#fff'}],location:'Clearwater Beach, FL',time:'07:30 AM',duration:'3.5 hrs',spots:'20 left',fullDesc:'Make the transition from pool to open water with confidence. Our swim coaches cover sighting techniques, drafting in races, dealing with currents, and mental strategies for open water anxiety. The clinic ends with a supervised 1.5km ocean swim. Wetsuits available for rent.',schedule:[{t:'07:30',a:'Land briefing: open water safety & rules'},{t:'08:00',a:'Shallow water drills: sighting & bilateral breathing'},{t:'08:45',a:'Guided ocean entry & group practice'},{t:'09:30',a:'Supervised 1.5km open water swim'},{t:'10:30',a:'Cool-down, debrief & certificate handout'}],speakers:[{ava:'🏊',bg:'#E0F7FA',name:'Coach Leila Shores',role:'Triathlon & Open Water Coach'},{ava:'⛑️',bg:'#FFEBEE',name:'Sam Briggs',role:'Certified Water Safety Instructor'}]},
-  {id:7,emoji:'🧗',bg:'#795548',category:'workshop',badge:'Adventure',badgeBg:'#FF9800',date:'Aug 2, 2026',title:'Indoor Climbing Fundamentals',shortDesc:'Learn belaying, footwork, and route-reading. From first-timers to intermediate climbers.',price:'$40',tags:[{label:'Climbing',bg:'#795548'},{label:'Indoor',bg:'#fff'}],location:'Peak Climbing Gym, Denver',time:'10:00 AM',duration:'3 hrs',spots:'16 left',fullDesc:'Whether you\'ve never touched a climbing wall or want to push past V2, this workshop takes you through the essentials. Small groups of 6 with dedicated instructors. Gear included. By the end you\'ll be lead climbing, reading routes, and building the foundational strength that makes you a better athlete overall.',schedule:[{t:'10:00',a:'Gear overview, safety systems & knots'},{t:'10:30',a:'Footwork & body positioning drills on the wall'},{t:'11:15',a:'Belaying certification practice'},{t:'12:00',a:'Route reading & problem solving (bouldering)'},{t:'12:30',a:'Free climb session & feedback'}],speakers:[{ava:'🧗',bg:'#EFEBE9',name:'Zoe Andretti',role:'Professional Climber & Certified Guide'},{ava:'🔒',bg:'#FFF3E0',name:'Ben Park',role:'Safety & Rigging Instructor'}]},
-  {id:8,emoji:'🏃‍♀️',bg:'#E91E63',category:'marathon',badge:'Women Only',badgeBg:'#9C27B0',date:'Aug 9, 2026',title:"Women's 10K Fun Run",shortDesc:'Celebrate movement, strength and sisterhood. A 10km run designed for women of all abilities.',price:'$15',tags:[{label:'10K',bg:'#E91E63'},{label:'Inclusive',bg:'#fff'}],location:'Golden Gate Park, SF',time:'08:00 AM',duration:'2 hrs',spots:'200 left',fullDesc:'Our Women\'s 10K is more than a race — it\'s a movement. Celebrate every finish line, cheer on strangers, and cross the line feeling unstoppable. The flat, scenic route through Golden Gate Park is perfect for first-timers and those returning post-injury. Free finisher tee and brunch ticket included.',schedule:[{t:'08:00',a:'Registration, warm-up dance class & group photo'},{t:'08:40',a:'Opening ceremony & motivational talk'},{t:'09:00',a:'Race start (no waves — everyone runs together)'},{t:'10:15',a:'Finisher zone: medals, photos & brunch'},{t:'11:00',a:'Panel: women in fitness & closing words'}],speakers:[{ava:'🌟',bg:'#FCE4EC',name:'Camille Ross',role:'Race Ambassador & Running Coach'},{ava:'📢',bg:'#F3E5F5',name:'Lisa Tang',role:'Motivational Speaker & Athlete'}]},
-  {id:9,emoji:'🚵',bg:'#9C27B0',category:'cycling',badge:'Pro Level',badgeBg:'#FF5252',date:'Aug 16, 2026',title:'Mountain Bike Trail Blast',shortDesc:'Tackle 25km of singletrack through rugged mountain terrain. Intermediate to advanced riders.',price:'$30',tags:[{label:'MTB',bg:'#9C27B0'},{label:'Trail',bg:'#fff'}],location:'Copper Mountain, CO',time:'06:30 AM',duration:'5 hrs',spots:'40 left',fullDesc:'Shred through world-class Colorado singletrack on a guided mountain bike adventure. The 25km route covers blue and black diamond trails with technical rocky sections, berms, and jaw-dropping alpine views. Mechanical support van follows the group. Helmets and gloves mandatory, full-suspension bikes recommended.',schedule:[{t:'06:30',a:'Trailhead meet-up, bike check & group split by skill'},{t:'07:00',a:'Trail ride begins — Blue trail group'},{t:'07:15',a:'Black diamond group departs'},{t:'10:00',a:'Summit rest stop & scenic lunch break'},{t:'11:30',a:'Return descent & post-ride celebration'}],speakers:[{ava:'🚵',bg:'#F3E5F5',name:'Hank Solis',role:'Pro MTB Rider & Trail Guide'},{ava:'🔧',bg:'#E8F5E9',name:'Carla Vega',role:'Bike Tech & Mechanical Support'}]},
-  {id:10,emoji:'🧬',bg:'#3F51B5',category:'workshop',badge:'Science',badgeBg:'#1DE9B6',date:'Aug 23, 2026',title:'Recovery Science Workshop',shortDesc:'Sleep, HRV, cold plunge, sauna & active recovery — the full playbook for elite-level recovery.',price:'$60',tags:[{label:'Recovery',bg:'#3F51B5'},{label:'Wellness',bg:'#fff'}],location:'BioFit Lab, Austin TX',time:'10:00 AM',duration:'4 hrs',spots:'22 left',fullDesc:'Train hard, recover harder. This science-forward workshop covers everything coaches don\'t teach: HRV monitoring, sleep optimization, cold water immersion protocols, contrast therapy, and foam rolling techniques proven by research. Participants get a full day access to the BioFit Lab\'s cold plunge pools, sauna suite, and recovery tools.',schedule:[{t:'10:00',a:'Science of recovery — what research actually shows'},{t:'10:45',a:'HRV tracking demo & interpretation guide'},{t:'11:15',a:'Cold plunge session (guided breathing protocol)'},{t:'12:00',a:'Contrast therapy: sauna & ice cycle'},{t:'13:00',a:'Sleep architecture talk & personalized recovery plan'}],speakers:[{ava:'🧬',bg:'#E8EAF6',name:'Dr. Priya Mehta',role:'Sports Science & Human Performance PhD'},{ava:'❄️',bg:'#E0F7FA',name:'Wim Harrod',role:'Cold Therapy & Breathwork Specialist'}]},
+  {
+    id:1, emoji:'🏃', bg:'#FF5252', category:'marathon',
+    badge:'Hot', badgeBg:'#FFC107',
+    date:'Jun 15, 2026', title:'City Spring Marathon',
+    shortDesc:'Classic 42km city marathon through the heart of downtown. All levels welcome!',
+    price:'$25',
+    tags:[{label:'Marathon',bg:'#FF5252'},{label:'Outdoor',bg:'#fff'}],
+    location:'Central Park, NYC', time:'07:00 AM', duration:'6 hrs', spots:'342 left',
+    fullDesc:'Join thousands of runners in our annual City Spring Marathon. The route winds through the most scenic parts of downtown, finishing at the iconic Central Park. Whether you\'re a seasoned athlete or a first-timer, this event has everything: pacers, hydration stations every 3km, post-race party and finisher medals.',
+    schedule:[
+      {t:'06:00',a:'Registration & warm-up zone opens'},
+      {t:'07:00',a:'Race start — Wave A (elite & sub-4h runners)'},
+      {t:'07:15',a:'Wave B — general participants'},
+      {t:'12:00',a:'Course closes, finisher ceremony'},
+      {t:'13:00',a:'Post-race party & live music'},
+    ],
+    speakers:[
+      {ava:'🏅',bg:'#FFE0E0',name:'Alex Rivera',role:'Race Director & Coach'},
+      {ava:'🩺',bg:'#E0F7FA',name:'Dr. Sarah Kim',role:'Sports Medicine Advisor'},
+    ]
+  },
+  {
+    id:2, emoji:'🧘', bg:'#1DE9B6', category:'yoga',
+    badge:'Popular', badgeBg:'#7B2FFF',
+    date:'Jun 22, 2026', title:'Sunrise Beach Yoga Camp',
+    shortDesc:'3-day immersive yoga retreat on the beach. Restore, breathe, and reconnect.',
+    price:'$89',
+    tags:[{label:'Yoga',bg:'#1DE9B6'},{label:'Beach',bg:'#fff'}],
+    location:'Miami Beach, FL', time:'05:30 AM', duration:'3 days', spots:'18 left',
+    fullDesc:'Wake up to the sound of waves and join our certified yoga instructors for a 3-day sunrise retreat. Sessions include Vinyasa, Yin Yoga, breathwork, and meditation. All skill levels are welcome. Package includes daily healthy breakfast, yoga mat rental, and a closing sunset ceremony.',
+    schedule:[
+      {t:'05:30',a:'Sunrise Vinyasa session on the sand'},
+      {t:'07:30',a:'Healthy breakfast & nutrition talk'},
+      {t:'10:00',a:'Yin Yoga & deep stretch'},
+      {t:'12:30',a:'Free time / beach walk'},
+      {t:'18:00',a:'Evening meditation & breathwork'},
+    ],
+    speakers:[
+      {ava:'🌸',bg:'#F3E5F5',name:'Maya Patel',role:'Head Yoga Instructor (RYT-500)'},
+      {ava:'🌿',bg:'#E8F5E9',name:'Jordan Lee',role:'Mindfulness & Breathwork Coach'},
+    ]
+  },
+  {
+    id:3, emoji:'🏋️', bg:'#7B2FFF', category:'workshop',
+    badge:'New', badgeBg:'#1DE9B6',
+    date:'Jul 5, 2026', title:'Strength & Conditioning Workshop',
+    shortDesc:'Master the fundamentals of strength training. Deadlifts, squats, and Olympic lifts taught by elite coaches.',
+    price:'$45',
+    tags:[{label:'Workshop',bg:'#7B2FFF'},{label:'Gym',bg:'#fff'}],
+    location:'PowerFit Gym, LA', time:'09:00 AM', duration:'4 hrs', spots:'29 left',
+    fullDesc:'A hands-on workshop designed to fix your form and supercharge your strength gains. You\'ll work in small groups (max 8 per coach) with certified strength & conditioning specialists. Covers squat mechanics, deadlift variations, Olympic lifting basics, and program design. Equipment provided.',
+    schedule:[
+      {t:'09:00',a:'Welcome & mobility warm-up'},
+      {t:'09:30',a:'Squat mechanics deep dive'},
+      {t:'10:30',a:'Deadlift variations & cueing'},
+      {t:'11:15',a:'Olympic lifting intro (clean & snatch)'},
+      {t:'12:00',a:'Q&A, programming advice & cool-down'},
+    ],
+    speakers:[
+      {ava:'💪',bg:'#EDE7F6',name:'Coach Marcus Bell',role:'NSCA-CSCS, 10yr elite coach'},
+      {ava:'🏆',bg:'#FFF8E1',name:'Tina Okafor',role:'Olympic Weightlifting Champion'},
+    ]
+  },
+  {
+    id:4, emoji:'🚴', bg:'#FF9800', category:'cycling',
+    badge:'Free', badgeBg:'#4CAF50',
+    date:'Jul 12, 2026', title:'Community Bike Ride',
+    shortDesc:'A fun 30km group ride through city parks. Beginner-friendly, helmets provided.',
+    price:'Free',
+    tags:[{label:'Cycling',bg:'#FF9800'},{label:'Outdoor',bg:'#fff'}],
+    location:'Riverside Park, Chicago', time:'08:00 AM', duration:'3 hrs', spots:'Unlimited',
+    fullDesc:'No experience? No problem! Our community bike ride is open to everyone. We ride at a comfortable pace with volunteer ride marshals at front and back. The 30km route passes through four city parks with planned photo stops and a mid-ride smoothie break. Bring water and sunscreen!',
+    schedule:[
+      {t:'08:00',a:'Meet-up, helmet fitting & bike check'},
+      {t:'08:30',a:'Group safety briefing & route overview'},
+      {t:'09:00',a:'Ride begins — Riverside Park loop'},
+      {t:'10:00',a:'Pit stop: smoothies & group photo'},
+      {t:'11:00',a:'Finish line & community BBQ'},
+    ],
+    speakers:[
+      {ava:'🚴',bg:'#FFF3E0',name:'Denise Chow',role:'Ride Organizer & Cycling Coach'},
+      {ava:'🛠️',bg:'#E8F5E9',name:'Pablo Gutierrez',role:'Bike Safety & Maintenance Expert'},
+    ]
+  },
+  {
+    id:5, emoji:'🥗', bg:'#4CAF50', category:'nutrition',
+    badge:'Limited', badgeBg:'#FF5252',
+    date:'Jul 19, 2026', title:'Sports Nutrition Masterclass',
+    shortDesc:'Learn exactly what to eat before, during and after training. Science-backed meal planning for athletes.',
+    price:'$35',
+    tags:[{label:'Nutrition',bg:'#4CAF50'},{label:'Indoor',bg:'#fff'}],
+    location:'FitHub Studio, Boston', time:'11:00 AM', duration:'2.5 hrs', spots:'12 left',
+    fullDesc:'Sports dietitian Dr. Emma Walsh breaks down the science of fueling your workouts. You\'ll leave with a personalized macro blueprint, a 7-day meal plan template, and knowledge of supplements that actually work. Includes a cooking demo of three high-protein, athlete-approved meals. Meal samples included.',
+    schedule:[
+      {t:'11:00',a:'Introduction: myths vs. science of sports nutrition'},
+      {t:'11:40',a:'Macros 101 — carbs, protein, fats for athletes'},
+      {t:'12:20',a:'Meal timing & pre/post workout nutrition'},
+      {t:'13:00',a:'Live cooking demo & tasting'},
+      {t:'13:20',a:'Q&A & personalized macro consultation'},
+    ],
+    speakers:[
+      {ava:'🥦',bg:'#E8F5E9',name:'Dr. Emma Walsh',role:'Registered Sports Dietitian (RD, CSSD)'},
+      {ava:'👨‍🍳',bg:'#FFF8E1',name:'Chef Raj Nair',role:'Athlete Performance Chef'},
+    ]
+  },
+  {
+    id:6, emoji:'🏊', bg:'#00BCD4', category:'workshop',
+    badge:'New', badgeBg:'#FF9800',
+    date:'Jul 26, 2026', title:'Open Water Swimming Clinic',
+    shortDesc:'Conquer open water! Technique, sighting, safety and ocean swimming confidence-building.',
+    price:'$55',
+    tags:[{label:'Swimming',bg:'#00BCD4'},{label:'Outdoor',bg:'#fff'}],
+    location:'Clearwater Beach, FL', time:'07:30 AM', duration:'3.5 hrs', spots:'20 left',
+    fullDesc:'Make the transition from pool to open water with confidence. Our swim coaches cover sighting techniques, drafting in races, dealing with currents, and mental strategies for open water anxiety. The clinic ends with a supervised 1.5km ocean swim. Wetsuits available for rent.',
+    schedule:[
+      {t:'07:30',a:'Land briefing: open water safety & rules'},
+      {t:'08:00',a:'Shallow water drills: sighting & bilateral breathing'},
+      {t:'08:45',a:'Guided ocean entry & group practice'},
+      {t:'09:30',a:'Supervised 1.5km open water swim'},
+      {t:'10:30',a:'Cool-down, debrief & certificate handout'},
+    ],
+    speakers:[
+      {ava:'🏊',bg:'#E0F7FA',name:'Coach Leila Shores',role:'Triathlon & Open Water Coach'},
+      {ava:'⛑️',bg:'#FFEBEE',name:'Sam Briggs',role:'Certified Water Safety Instructor'},
+    ]
+  },
+  {
+    id:7, emoji:'🧗', bg:'#795548', category:'workshop',
+    badge:'Adventure', badgeBg:'#FF9800',
+    date:'Aug 2, 2026', title:'Indoor Climbing Fundamentals',
+    shortDesc:'Learn belaying, footwork, and route-reading. From first-timers to intermediate climbers.',
+    price:'$40',
+    tags:[{label:'Climbing',bg:'#795548'},{label:'Indoor',bg:'#fff'}],
+    location:'Peak Climbing Gym, Denver', time:'10:00 AM', duration:'3 hrs', spots:'16 left',
+    fullDesc:'Whether you\'ve never touched a climbing wall or want to push past V2, this workshop takes you through the essentials. Small groups of 6 with dedicated instructors. Gear included. By the end you\'ll be lead climbing, reading routes, and building the foundational strength that makes you a better athlete overall.',
+    schedule:[
+      {t:'10:00',a:'Gear overview, safety systems & knots'},
+      {t:'10:30',a:'Footwork & body positioning drills on the wall'},
+      {t:'11:15',a:'Belaying certification practice'},
+      {t:'12:00',a:'Route reading & problem solving (bouldering)'},
+      {t:'12:30',a:'Free climb session & feedback'},
+    ],
+    speakers:[
+      {ava:'🧗',bg:'#EFEBE9',name:'Zoe Andretti',role:'Professional Climber & Certified Guide'},
+      {ava:'🔒',bg:'#FFF3E0',name:'Ben Park',role:'Safety & Rigging Instructor'},
+    ]
+  },
+  {
+    id:8, emoji:'🏃‍♀️', bg:'#E91E63', category:'marathon',
+    badge:'Women Only', badgeBg:'#9C27B0',
+    date:'Aug 9, 2026', title:"Women's 10K Fun Run",
+    shortDesc:'Celebrate movement, strength and sisterhood. A 10km run designed for women of all abilities.',
+    price:'$15',
+    tags:[{label:'10K',bg:'#E91E63'},{label:'Inclusive',bg:'#fff'}],
+    location:'Golden Gate Park, SF', time:'08:00 AM', duration:'2 hrs', spots:'200 left',
+    fullDesc:'Our Women\'s 10K is more than a race — it\'s a movement. Celebrate every finish line, cheer on strangers, and cross the line feeling unstoppable. The flat, scenic route through Golden Gate Park is perfect for first-timers and those returning post-injury. Free finisher tee and brunch ticket included.',
+    schedule:[
+      {t:'08:00',a:'Registration, warm-up dance class & group photo'},
+      {t:'08:40',a:'Opening ceremony & motivational talk'},
+      {t:'09:00',a:'Race start (no waves — everyone runs together)'},
+      {t:'10:15',a:'Finisher zone: medals, photos & brunch'},
+      {t:'11:00',a:'Panel: women in fitness & closing words'},
+    ],
+    speakers:[
+      {ava:'🌟',bg:'#FCE4EC',name:'Camille Ross',role:'Race Ambassador & Running Coach'},
+      {ava:'📢',bg:'#F3E5F5',name:'Lisa Tang',role:'Motivational Speaker & Athlete'},
+    ]
+  },
+  {
+    id:9, emoji:'🚵', bg:'#9C27B0', category:'cycling',
+    badge:'Pro Level', badgeBg:'#FF5252',
+    date:'Aug 16, 2026', title:'Mountain Bike Trail Blast',
+    shortDesc:'Tackle 25km of singletrack through rugged mountain terrain. Intermediate to advanced riders.',
+    price:'$30',
+    tags:[{label:'MTB',bg:'#9C27B0'},{label:'Trail',bg:'#fff'}],
+    location:'Copper Mountain, CO', time:'06:30 AM', duration:'5 hrs', spots:'40 left',
+    fullDesc:'Shred through world-class Colorado singletrack on a guided mountain bike adventure. The 25km route covers blue and black diamond trails with technical rocky sections, berms, and jaw-dropping alpine views. Mechanical support van follows the group. Helmets and gloves mandatory, full-suspension bikes recommended.',
+    schedule:[
+      {t:'06:30',a:'Trailhead meet-up, bike check & group split by skill'},
+      {t:'07:00',a:'Trail ride begins — Blue trail group'},
+      {t:'07:15',a:'Black diamond group departs'},
+      {t:'10:00',a:'Summit rest stop & scenic lunch break'},
+      {t:'11:30',a:'Return descent & post-ride celebration'},
+    ],
+    speakers:[
+      {ava:'🚵',bg:'#F3E5F5',name:'Hank Solis',role:'Pro MTB Rider & Trail Guide'},
+      {ava:'🔧',bg:'#E8F5E9',name:'Carla Vega',role:'Bike Tech & Mechanical Support'},
+    ]
+  },
+  {
+    id:10, emoji:'🧬', bg:'#3F51B5', category:'workshop',
+    badge:'Science', badgeBg:'#1DE9B6',
+    date:'Aug 23, 2026', title:'Recovery Science Workshop',
+    shortDesc:'Sleep, HRV, cold plunge, sauna & active recovery — the full playbook for elite-level recovery.',
+    price:'$60',
+    tags:[{label:'Recovery',bg:'#3F51B5'},{label:'Wellness',bg:'#fff'}],
+    location:'BioFit Lab, Austin TX', time:'10:00 AM', duration:'4 hrs', spots:'22 left',
+    fullDesc:'Train hard, recover harder. This science-forward workshop covers everything coaches don\'t teach: HRV monitoring, sleep optimization, cold water immersion protocols, contrast therapy, and foam rolling techniques proven by research. Participants get a full day access to the BioFit Lab\'s cold plunge pools, sauna suite, and recovery tools.',
+    schedule:[
+      {t:'10:00',a:'Science of recovery — what research actually shows'},
+      {t:'10:45',a:'HRV tracking demo & interpretation guide'},
+      {t:'11:15',a:'Cold plunge session (guided breathing protocol)'},
+      {t:'12:00',a:'Contrast therapy: sauna & ice cycle'},
+      {t:'13:00',a:'Sleep architecture talk & personalized recovery plan'},
+    ],
+    speakers:[
+      {ava:'🧬',bg:'#E8EAF6',name:'Dr. Priya Mehta',role:'Sports Science & Human Performance PhD'},
+      {ava:'❄️',bg:'#E0F7FA',name:'Wim Harrod',role:'Cold Therapy & Breathwork Specialist'},
+    ]
+  },
 ];
 
 let currentEventId = null;
@@ -654,26 +1318,28 @@ function renderEvents(filter) {
     card.className = 'event-card reveal';
     card.style.transitionDelay = (idx * 0.07) + 's';
     card.onclick = () => openModal(ev.id);
-    card.innerHTML =
-      '<div class="event-card-img" style="background:' + ev.bg + '">' +
-        ev.emoji +
-        '<div class="event-badge" style="background:' + ev.badgeBg + '">' + ev.badge + '</div>' +
-      '</div>' +
-      '<div class="event-card-body">' +
-        '<div class="event-date">📅 ' + ev.date + ' &nbsp;•&nbsp; ⏱ ' + ev.duration + '</div>' +
-        '<div class="event-title">' + ev.title + '</div>' +
-        '<div class="event-desc-short">' + ev.shortDesc + '</div>' +
-        '<div class="event-meta">' +
-          ev.tags.map(function(t){return '<span class="event-tag" style="background:'+t.bg+'">'+t.label+'</span>';}).join('') +
-          '<span class="event-spots">' + ev.spots + ' spots</span>' +
-        '</div>' +
-      '</div>' +
-      '<div class="event-card-footer">' +
-        '<div class="event-price">' + ev.price + '</div>' +
-        '<button class="event-join-btn" onclick="event.stopPropagation();openModal(' + ev.id + ')">View Details →</button>' +
-      '</div>';
+    card.innerHTML = `
+      <div class="event-card-img" style="background:${ev.bg}">
+        ${ev.emoji}
+        <div class="event-badge" style="background:${ev.badgeBg}">${ev.badge}</div>
+      </div>
+      <div class="event-card-body">
+        <div class="event-date">📅 ${ev.date} &nbsp;•&nbsp; ⏱ ${ev.duration}</div>
+        <div class="event-title">${ev.title}</div>
+        <div class="event-desc-short">${ev.shortDesc}</div>
+        <div class="event-meta">
+          ${ev.tags.map(t => `<span class="event-tag" style="background:${t.bg}">${t.label}</span>`).join('')}
+          <span class="event-spots">${ev.spots} spots</span>
+        </div>
+      </div>
+      <div class="event-card-footer">
+        <div class="event-price">${ev.price}</div>
+        <button class="event-join-btn" onclick="event.stopPropagation();openModal(${ev.id})">View Details →</button>
+      </div>
+    `;
     grid.appendChild(card);
   });
+  // re-observe new cards
   grid.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 }
 
@@ -687,22 +1353,50 @@ function openModal(id) {
   const ev = EVENTS.find(e => e.id === id);
   if (!ev) return;
   currentEventId = id;
+
   document.getElementById('modalHero').style.background = ev.bg;
-  document.getElementById('modalHero').innerHTML = '<span style="font-size:80px">' + ev.emoji + '</span><button class="modal-close" onclick="closeModal()">✕</button>';
+  document.getElementById('modalHero').innerHTML = `
+    <span style="font-size:80px">${ev.emoji}</span>
+    <button class="modal-close" onclick="closeModal()">✕</button>
+  `;
   document.getElementById('modalTitle').textContent = ev.title;
   document.getElementById('modalPrice').textContent = ev.price;
-  document.getElementById('modalTags').innerHTML = ev.tags.map(function(t){return '<span class="modal-tag" style="background:'+t.bg+'">'+t.label+'</span>';}).join('') + '<span class="modal-tag" style="background:#f0f0f0">📅 ' + ev.date + '</span>';
-  document.getElementById('modalInfoGrid').innerHTML =
-    '<div class="modal-info-item"><div class="mii-label">📍 Location</div><div class="mii-val">' + ev.location + '</div></div>' +
-    '<div class="modal-info-item"><div class="mii-label">🕐 Start Time</div><div class="mii-val">' + ev.time + '</div></div>' +
-    '<div class="modal-info-item"><div class="mii-label">⏱ Duration</div><div class="mii-val">' + ev.duration + '</div></div>' +
-    '<div class="modal-info-item"><div class="mii-label">🎟 Available Spots</div><div class="mii-val">' + ev.spots + '</div></div>';
+
+  document.getElementById('modalTags').innerHTML =
+    ev.tags.map(t => `<span class="modal-tag" style="background:${t.bg}">${t.label}</span>`).join('') +
+    `<span class="modal-tag" style="background:#f0f0f0">📅 ${ev.date}</span>`;
+
+  document.getElementById('modalInfoGrid').innerHTML = `
+    <div class="modal-info-item"><div class="mii-label">📍 Location</div><div class="mii-val">${ev.location}</div></div>
+    <div class="modal-info-item"><div class="mii-label">🕐 Start Time</div><div class="mii-val">${ev.time}</div></div>
+    <div class="modal-info-item"><div class="mii-label">⏱ Duration</div><div class="mii-val">${ev.duration}</div></div>
+    <div class="modal-info-item"><div class="mii-label">🎟 Available Spots</div><div class="mii-val">${ev.spots}</div></div>
+  `;
+
   document.getElementById('modalDesc').textContent = ev.fullDesc;
-  document.getElementById('modalSchedule').innerHTML = '<h4>📋 Schedule</h4>' + ev.schedule.map(function(s){return '<div class="sched-item"><div class="sched-time">'+s.t+'</div><div class="sched-act">'+s.a+'</div></div>';}).join('');
-  document.getElementById('modalSpeakers').innerHTML = '<h4>🎤 Coaches & Speakers</h4>' + ev.speakers.map(function(sp){return '<div class="speaker-row"><div class="speaker-ava" style="background:'+sp.bg+'">'+sp.ava+'</div><div><div class="speaker-name">'+sp.name+'</div><div class="speaker-role">'+sp.role+'</div></div></div>';}).join('');
+
+  document.getElementById('modalSchedule').innerHTML = `
+    <h4>📋 Schedule</h4>
+    ${ev.schedule.map(s => `
+      <div class="sched-item">
+        <div class="sched-time">${s.t}</div>
+        <div class="sched-act">${s.a}</div>
+      </div>`).join('')}
+  `;
+
+  document.getElementById('modalSpeakers').innerHTML = `
+    <h4>🎤 Coaches & Speakers</h4>
+    ${ev.speakers.map(sp => `
+      <div class="speaker-row">
+        <div class="speaker-ava" style="background:${sp.bg}">${sp.ava}</div>
+        <div><div class="speaker-name">${sp.name}</div><div class="speaker-role">${sp.role}</div></div>
+      </div>`).join('')}
+  `;
+
   const btn = document.getElementById('modalRegBtn');
   btn.className = 'modal-register-btn';
   btn.textContent = '🎉 Register Now';
+
   document.getElementById('eventModal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -713,32 +1407,18 @@ function closeModal(e) {
   document.body.style.overflow = '';
 }
 
-/* ══ EVENT REGISTRATION with email + SMS ══ */
 function registerEvent() {
-  const ev = EVENTS.find(e => e.id === currentEventId);
-  if (!ev) return;
   const btn = document.getElementById('modalRegBtn');
   btn.textContent = '✅ Registered! See you there!';
   btn.className = 'modal-register-btn registered';
-
-  const subject = 'Easy App — Event: ' + ev.title;
-  const body = 'Yangi event ro\'yxatdan o\'tdi:\n\nEvent: ' + ev.title + '\nSana: ' + ev.date + '\nJoy: ' + ev.location + '\nNarx: ' + ev.price + '\nVaqt: ' + new Date().toLocaleString('ru-RU');
-  sendAdminEmail(subject, body);
-
-  const smsText = 'Easy App: "' + ev.title + '" eventiga yangi ro\'yxat! ' + ev.date + ', ' + ev.location;
-  setTimeout(() => sendAdminSMS(smsText), 700);
-
-  showToast('🎉', 'Ro\'yxatdan o\'tdingiz!', ev.title + ' uchun email & SMS ketdi.', 'toast-email');
 }
 
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    document.getElementById('eventModal').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-});
+// Escape key closes modal
+document.addEventListener('keydown', e => { if(e.key==='Escape') { document.getElementById('eventModal').classList.remove('open'); document.body.style.overflow=''; }});
 
+// Init events
 renderEvents('all');
+
 </script>
 </body>
 </html>
